@@ -101,3 +101,17 @@
     text-align: justify;
   }
 }
+
+.lang-switch {
+  display: flex;
+  gap: 1rem;
+}
+
+.lang-switch span {
+  font-size: 1.5rem;
+  transition: transform 0.2s;
+}
+
+.lang-switch span:hover {
+  transform: scale(1.2);
+}

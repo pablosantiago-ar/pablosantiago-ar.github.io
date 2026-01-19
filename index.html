@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Portfolio</title>
+    <title>Pablo Santiago - Portfolio</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="mediaqueries.css" />
   </head>
@@ -13,10 +13,16 @@
       <div class="logo">Pablo Santiago</div>
       <div>
         <ul class="nav-links">
-          <li><a href="#about">About</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#about" data-i18n="nav_about">About</a></li>
+          <li><a href="#experience" data-i18n="nav_exp">Experience</a></li>
+          <li><a href="#projects" data-i18n="nav_proj">Projects</a></li>
+          <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
+          <li class="lang-switch-container">
+            <div class="lang-switch">
+              <span id="btn-pt-desktop" class="lang-btn" onclick="setLanguage('pt')">PT</span>
+              <span id="btn-en-desktop" class="lang-btn active" onclick="setLanguage('en')">EN</span>
+            </div>
+          </li>
         </ul>
       </div>
     </nav>
@@ -29,29 +35,37 @@
           <span></span>
         </div>
         <div class="menu-links">
-          <li><a href="#about" onclick="toggleMenu()">About</a></li>
-          <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
-          <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-          <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+          <li><a href="#about" onclick="toggleMenu()" data-i18n="nav_about">About</a></li>
+          <li><a href="#experience" onclick="toggleMenu()" data-i18n="nav_exp">Experience</a></li>
+          <li><a href="#projects" onclick="toggleMenu()" data-i18n="nav_proj">Projects</a></li>
+          <li><a href="#contact" onclick="toggleMenu()" data-i18n="nav_contact">Contact</a></li>
+          <li class="lang-switch-container-mobile">
+            <div class="lang-switch mobile-switch">
+              <span id="btn-pt-mobile" class="lang-btn" onclick="setLanguage('pt'); toggleMenu()">PT</span>
+              <span id="btn-en-mobile" class="lang-btn active" onclick="setLanguage('en'); toggleMenu()">EN</span>
+            </div>
+          </li>
         </div>
       </div>
     </nav>
     <section id="profile">
       <div class="section__pic-container">
-        <img src="./assets/profile-pic.png" alt="John Doe profile picture" />
+        <img src="./assets/profile-pic.png" alt="Pablo Santiago profile picture" />
       </div>
       <div class="section__text">
-        <p class="section__text__p1">Hello, I'm</p>
+        <p class="section__text__p1" data-i18n="profile_hello">Hello, I'm</p>
         <h1 class="title">Pablo Santiago</h1>
-        <p class="section__text__p2">Frontend Developer</p>
+        <p class="section__text__p2" data-i18n="profile_role">Computer Engineering Student</p>
         <div class="btn-container">
           <button
+            id="btn-cv"
             class="btn btn-color-2"
-            onclick="window.open('./assets/Resume.jpg')"
+            onclick="window.open('./assets/Resume_Pablo-Santiago.pdf')"
+            data-i18n="btn_cv"
           >
             Download CV
           </button>
-          <button class="btn btn-color-1" onclick="location.href='#contact'">
+          <button class="btn btn-color-1" onclick="location.href='#contact'" data-i18n="btn_contact">
             Contact Info
           </button>
         </div>
@@ -72,8 +86,8 @@
       </div>
     </section>
     <section id="about">
-      <p class="section__text__p1">Get To Know More</p>
-      <h1 class="title">About Me</h1>
+      <p class="section__text__p1" data-i18n="section_know_more">Get To Know More</p>
+      <h1 class="title" data-i18n="about_title">About Me</h1>
       <div class="section-container">
         <div class="about-details-container">
           <div class="about-containers">
@@ -83,8 +97,8 @@
                 alt="Experience icon"
                 class="icon"
               />
-              <h3>Experience</h3>
-              <p>2+ years <br />Frontend Development</p>
+              <h3 data-i18n="nav_exp">Experience</h3>
+              <p data-i18n="about_exp_desc">2+ years <br />DevOps & FullStack</p>
             </div>
             <div class="details-container">
               <img
@@ -92,15 +106,15 @@
                 alt="Education icon"
                 class="icon"
               />
-              <h3>Education</h3>
-              <p>IT technician. IFCE<br />Computer Engineering Student. IFCE</p>
+              <h3 data-i18n="about_edu_title">Education</h3>
+              <p data-i18n="about_edu_desc">IT Technician. IFCE<br />B.Sc. Computer Engineering (Ongoing)</p>
             </div>
           </div>
           <div class="text-container">
-            <p>
-              As a IT Technician I was responsible for carrying out computer operations, 
-              as well as developing computer applications that use development environments, 
-              operating systems, computer networks and databases in the performance of their role!
+            <p data-i18n="about_text">
+              As an IT Technician and Computer Engineering student, I bridge the gap between hardware and software. 
+              My expertise ranges from low-level IoT solutions with ESP32 to modern Web & Mobile applications, 
+              always focusing on automation and efficient infrastructure.
             </p>
           </div>
         </div>
@@ -113,126 +127,93 @@
       />
     </section>
     <section id="experience">
-      <p class="section__text__p1">Explore My</p>
-      <h1 class="title">Experience</h1>
+      <p class="section__text__p1" data-i18n="section_explore">Explore My</p>
+      <h1 class="title" data-i18n="nav_exp">Experience</h1>
       <div class="experience-details-container">
         <div class="about-containers">
           <div class="details-container">
-            <h2 class="experience-sub-title">Frontend Development</h2>
+            <h2 class="experience-sub-title" data-i18n="exp_backend_title">Backend & DevOps</h2>
             <div class="article-container">
               <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
+                <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
                 <div>
-                  <h3>HTML</h3>
-                  <p>Experienced</p>
+                  <h3>C# / .NET</h3>
+                  <p data-i18n="level_basic">Basic</p>
                 </div>
               </article>
               <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
+                <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
                 <div>
-                  <h3>CSS</h3>
-                  <p>Experienced</p>
+                  <h3>Python</h3>
+                  <p data-i18n="level_inter">Intermediate</p>
                 </div>
               </article>
               <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
+                <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
                 <div>
-                  <h3>ReactJS</h3>
-                  <p>Intermediate</p>
+                  <h3>SQL / NeonDB</h3>
+                  <p data-i18n="level_inter">Intermediate</p>
                 </div>
               </article>
               <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
+                <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
                 <div>
-                  <h3>JavaScript</h3>
-                  <p>Intermediate</p>
+                  <h3>Docker</h3>
+                  <p data-i18n="level_basic">Basic</p>
                 </div>
               </article>
               <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
+                <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
                 <div>
-                  <h3>TypeScript</h3>
-                  <p>Basic</p>
+                  <h3>Linux</h3>
+                  <p data-i18n="level_inter">Intermediate</p>
                 </div>
               </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
+               <article>
+                <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
                 <div>
-                  <h3>Material UI</h3>
-                  <p>Basic</p>
+                  <h3>Git/GitHub</h3>
+                  <p data-i18n="level_inter">Intermediate</p>
                 </div>
               </article>
             </div>
           </div>
           <div class="details-container">
-            <h2 class="experience-sub-title">Frontend Development</h2>
+            <h2 class="experience-sub-title" data-i18n="exp_frontend_title">Frontend & Mobile</h2>
             <div class="article-container">
               <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
+                <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
                 <div>
-                  <h3>Firebase</h3>
-                  <p>Intermediate</p>
+                  <h3>ReactJS</h3>
+                  <p data-i18n="level_inter">Intermediate</p>
                 </div>
               </article>
               <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
+                <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
                 <div>
-                  <h3>Node JS</h3>
-                  <p>Intermediate</p>
+                  <h3>JavaScript</h3>
+                  <p data-i18n="level_inter">Intermediate</p>
                 </div>
               </article>
               <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
+                <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
                 <div>
-                  <h3>Mongo DB</h3>
-                  <p>Basic</p>
+                  <h3>HTML / CSS</h3>
+                  <p data-i18n="level_exp">Experienced</p>
                 </div>
               </article>
               <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
+                <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
                 <div>
-                  <h3>Git</h3>
-                  <p>Basic</p>
+                  <h3>Kotlin (Android)</h3>
+                  <p data-i18n="level_basic">Basic</p>
+                </div>
+              </article>
+              <article>
+                <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
+                <div>
+                  <h3>Swift (iOS)</h3>
+                  <p data-i18n="level_basic">Basic</p>
                 </div>
               </article>
             </div>
@@ -247,67 +228,65 @@
       />
     </section>
     <section id="projects">
-      <p class="section__text__p1">Browse My Recent</p>
-      <h1 class="title">Projects</h1>
+      <p class="section__text__p1" data-i18n="section_browse">Browse My Recent</p>
+      <h1 class="title" data-i18n="nav_proj">Projects</h1>
       <div class="experience-details-container">
         <div class="about-containers">
+          
           <div class="details-container color-container">
             <div class="article-container">
-            </div>
-            <h2 class="experience-sub-title project-title">Seu Lar<br>ReactJS; CSS; Firebase</h2>
+              </div>
+            <h2 class="experience-sub-title project-title" data-i18n="proj_1_title">
+              Molecule Database App<br/>Next.js, TypeScript, NeonDB
+            </h2>
             <div class="btn-container">
               <button
                 class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/Pablo-Santiago-prog/Project-SeuLar-online-realtor'"
+                onclick="location.href='https://github.com/Pablo-Santiago-prog'"
+              >
+                Github
+              </button>
+            </div>
+          </div>
+
+          <div class="details-container color-container">
+            <div class="article-container">
+               </div>
+            <h2 class="experience-sub-title project-title" data-i18n="proj_2_title">
+              IoT Beehive Monitor<br/>ESP32, C++, Sensors
+            </h2>
+            <div class="btn-container">
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://github.com/Pablo-Santiago-prog'"
+              >
+                Github
+              </button>
+            </div>
+          </div>
+
+          <div class="details-container color-container">
+            <div class="article-container">
+               </div>
+            <h2 class="experience-sub-title project-title" data-i18n="proj_3_title">
+              Desmorona Brasil (iOS)<br/>Swift, Apple Academy
+            </h2>
+            <div class="btn-container">
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://github.com/Pablo-Santiago-prog/Projeto-Apple-Academy'"
               >
                 Github
               </button>
               <button
                 class="btn btn-color-2 project-btn"
-                onclick="location.href='https://seular.vercel.app/'"
+                onclick="location.href='https://github.com/Pablo-Santiago-prog/Projeto-Apple-Academy'"
               >
                 Live Demo
               </button>
             </div>
           </div>
-          <div class="details-container color-container">
-            <div class="article-container">
-            </div>
-            <h2 class="experience-sub-title project-title">Rebuild Fireboy and Watergirl<br>C#; Unity</h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/Pablo-Santiago-prog/Rebuild-Fireboy-and-Watergirl/tree/main/WebFrontGame-main'"
-              >
-                Github
-              </button>
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://www.youtube.com/watch?v=yZdK9Beq_jY'"
-              >
-                Live Demo
-              </button>
-            </div>
-          </div>
-          <div class="details-container color-container">
-            <div class="article-container">
-            </div>
-            <h2 class="experience-sub-title project-title">Desmorona Brasil<br>Swift</h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/Pablo-Santiago-prog/Projeto-Apple-Academy/tree/main/Projeto-app-IOS---Apple-foundation-main/Projeto-app-IOS---Apple-foundation-main'"
-              >
-                Github
-              </button>
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/Pablo-Santiago-prog/Projeto-Apple-Academy/blob/main/Projeto-app-IOS---Apple-foundation-main/Projeto-app-IOS---Apple-foundation-main/README.md'"
-              >
-                Live Demo
-              </button>
-            </div>
-          </div>
+
         </div>
       </div>
       <img
@@ -318,8 +297,8 @@
       />
     </section>
     <section id="contact">
-      <p class="section__text__p1">Get in Touch</p>
-      <h1 class="title">Contact Me</h1>
+      <p class="section__text__p1" data-i18n="section_touch">Get in Touch</p>
+      <h1 class="title" data-i18n="nav_contact">Contact Me</h1>
       <div class="contact-info-upper-container">
         <div class="contact-info-container">
           <img
@@ -343,10 +322,10 @@
       <nav>
         <div class="nav-links-container">
           <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#about" data-i18n="nav_about">About</a></li>
+            <li><a href="#experience" data-i18n="nav_exp">Experience</a></li>
+            <li><a href="#projects" data-i18n="nav_proj">Projects</a></li>
+            <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
           </ul>
         </div>
       </nav>
